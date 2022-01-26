@@ -57,6 +57,16 @@ end
 #O(n^2)
 
 #SOLUTION(2) with a Hash map
+# nums = [2,7,11,15], target = 9
+# Create a hashmap which accepts integer datatype as key and value.
+
+# Iterate through each element in the given array starting from the first element.
+
+# In each iteration check if required number (required  number = target - current number) is present in the given array.
+
+# If present, return {required number index, current number index} as  result.
+
+# Otherwise add the current iteration number as key and its index as value to the hashmap. Repeat this  until you find the result.
 
 def two_sum(nums, target)
     
