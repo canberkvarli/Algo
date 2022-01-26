@@ -1,5 +1,0 @@
-def sayHello
-    "hello"
-end
-
-
