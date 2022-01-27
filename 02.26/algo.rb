@@ -78,3 +78,22 @@ def digitize(n)
     #(354321)
   n.to_s.chars.reverse.map(&:to_i)
 end 
+
+def remove_consecutive_duplicates(s)
+
+array = s.split(" ")  
+resp = []
+  
+# Remove consecutive duplicate words
+for i in 0...array.length()
+  
+    if array[i] != array[i + 1]
+        resp << array[i]  
+    end
+  
+end
+   
+return resp.join(' ')
+
+  
+end 
