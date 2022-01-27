@@ -71,3 +71,10 @@ end
 def two_sum(nums, target)
     
 end
+
+# Convert number to reversed array of digits
+
+def digitize(n)
+    #(354321)
+  n.to_s.chars.reverse.map(&:to_i)
+end 
