@@ -92,8 +92,5 @@ for i in 0...array.length()
     end
   
 end
-   
 return resp.join(' ')
-
-  
 end 
