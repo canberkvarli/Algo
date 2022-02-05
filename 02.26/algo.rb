@@ -116,16 +116,38 @@ end
 
 
 def search(nums, target)
-    #iterate nums
-    #if i == target
-    # return index of i 
-    #else -1
+# @param {Integer[]} nums
+# @param {Integer} target
+# @return {Integer}
+def search(nums, target)
+    #binary search
     
-    nums.each do |i|
-        if i == target 
-            return nums.index(i)
-        else
-           -1 
+    #find middle
+    #set min and max
+    
+    # if mid = target
+        # return mid
+    # if mid > target
+        #discard right side focus left
+        #max = mid - 1
+    # else 
+        #min = mid + 1
+        #discard left side focus right
+    
+        #return nums.index
+        min = 0 
+        max = nums.length - 1
+        while min <= max 
+            mid = (min + max)/2
+            if nums[mid] == target
+            return mid
+            elsif nums[mid] < target
+                min = mid + 1 
+            else
+                max = mid - 1
+            end
         end
+        -1
     end
 end
+
