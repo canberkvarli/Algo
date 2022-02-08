@@ -210,3 +210,25 @@ end
 #Input: nums = [1,3,5,6], target = 7
 #Output: 4
  
+def search_insert(nums, target)
+    #binary search and find the target
+    #if not found
+    
+    left = 0
+    right = nums.length - 1
+    
+    while left <= right
+       mid = (left+right) / 2
+        if nums[mid] == target
+            return mid
+        elsif nums[mid] > target
+            #focus left
+            right = mid - 1
+        else
+            #focus right
+            left = mid + 1
+        end
+    end
+    # if not found
+    left
+end
