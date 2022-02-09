@@ -277,3 +277,30 @@ def rotate(nums, k)
     k.times {|i| nums.unshift(nums.pop)}
     return nums
 end
+
+#Move Zeroes
+
+#
+#Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+##Note that you must do this in-place without making a copy of the array.
+
+ 
+
+#Example 1:
+
+#nput: nums = [0,1,0,3,12]
+#Output: [1,3,12,0,0]
+
+def move_zeroes(nums)
+#[0,1,0,3,12]
+ head = 0
+    #head = 1
+  nums.each_with_index do |num, i| 
+      #i = 3
+    if(nums[i] != 0) 
+      nums[head], nums[i] = nums[i], nums[head]
+      head+=1
+    end
+  end
+end
