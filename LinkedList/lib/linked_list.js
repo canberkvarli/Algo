@@ -150,6 +150,17 @@ class LinkedList {
 
     // TODO: Implement the insert method here
     insert(index, val) {
+    if (index < 0 || index >= this.length) {return false}
+    if (index === this.length) {return !!this.addToTail(val)}
+    if(index === 0){ return !!this.addToHead(val)}
+
+    const newNode = new Node(val)
+    const prevNode = this.get(index - 1);
+    const temp = prevNode.next
+    prevNode.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true
 
     }
 
@@ -160,7 +171,7 @@ class LinkedList {
 
     // TODO: Implement the size method here
     size() {
-
+       return this.length
     }
 }
 
