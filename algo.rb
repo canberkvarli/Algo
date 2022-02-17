@@ -351,16 +351,6 @@ def two_sum(numbers, target)
     end
 end
 
-#Reverse String
-
-#Write a function that reverses a string. The input string is given as an array of characters s.
-
-#You must do this by modifying the input array in-place with O(1) extra memory.
-
-var reverseString = function(s) {
-    s.reverse()
-};
-
 #Reverse Words in a String III
 
 #Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
@@ -372,14 +362,28 @@ var reverseString = function(s) {
 #Input: s = "Let's take LeetCode contest"
 #Output: "s'teL ekat edoCteeL tsetnoc"
 
-def reverse_words(s)
+def reverse_words(str)
     #split the string by space
     #iterate words and reverse every word
     # push reversed word into result
     # join it by space 
     result = []
-    words = s.split(' ')
+    words = str.split(' ')
     words.each {|word| result << word.reverse()}
     return result.join(" ")
     
 end
+
+#  Write a method `factorial(n)` which takes a number and returns the factorial of n.
+#  A factorial is the product of all whole numbers between 1 and n, inclusive.
+#  For example, `factorial(5)` is 5 * 4 * 3 * 2 * 1 = 120.
+
+def factorial(n)
+    # base case
+    return 1 if n == 1
+    # recursion case
+
+    return n * factorial(n -1)
+end
+
+puts factorial(5)
