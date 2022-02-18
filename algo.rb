@@ -406,16 +406,17 @@ end
 // fib(7) // => 13
 =end
 
-def fib(n) 
+def fastFib(n, memo = {}) 
     # 3
     # base case
     return 1 if n == 1
     return 1 if n == 2
+    return memo[n] if memo.include?(n)
 
     # recursive case
 
-    return fib(n-2) + fib(n-1)
-    
+    memo[n] = fastFib(n-2) + fastFib(n-1)
+    return memo[n]
 end
 
-puts fib(7)
+puts fastFib(35)
