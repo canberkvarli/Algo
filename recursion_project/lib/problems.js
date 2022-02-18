@@ -41,7 +41,16 @@ function lucasNumber(n) {
 function sumArray(array) {
 
     // base case
+    if (array.length === 0) return 0
+    if (array.length === 1) return array[0]
 
+    // recursive case
+    let sum = 0
+    for (let i = 0; i < array.length; i++) {
+        const num = sumArray(array[i])
+        sum += num
+    }
+    return sum
 
 }
 
@@ -58,6 +67,22 @@ function sumArray(array) {
 // reverseString("internet")    // => "tenretni"
 // reverseString("friends")     // => "sdneirf"
 function reverseString(str) {
+
+    // base case
+    if(str.length === 0) return ""
+    if(str.length === 1) return str.split(0,1)[0]
+    
+    arr = str.split(0,str.length)
+    
+    // recursive
+
+    let reversed_str = ""
+    for (let i = 0; i < arr.length; i++) {
+        reversed_str += reverseString(str)
+    }
+    return reversed_str
+
+
 
 }
 
