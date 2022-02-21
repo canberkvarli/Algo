@@ -82,8 +82,6 @@ function reverseString(str) {
     }
     return reversed_str
 
-
-
 }
 
 
@@ -104,6 +102,17 @@ function reverseString(str) {
 // pow(3, 4)    // => 81
 // pow(2, -5)   // => 0.03125
 function pow(base, exponent) {
+    // base case
+        if(exponent === 0 ) return 1
+        if(exponent === 1) return base
+    // 2, 5
+    //  2* 2* 2 * 2 *2
+    // recursive case
+    if(exponent > 1) {
+        return base * pow(base, exponent - 1)
+    }else if (exponent < 0){
+        return 1/(base*pow(base,exponent-1))
+    }
 
 }
 
