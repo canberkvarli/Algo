@@ -420,3 +420,24 @@ def fastFib(n, memo = {})
 end
 
 puts fastFib(35)
+
+
+
+# isPrime?(val)
+
+# Test if number is prime
+def isPrime(num)
+
+  if num < 2
+    return false
+  end
+  
+#   return false if num is divisible n
+  range = (2...num)
+  range.each do |n|
+      if num % n == 0
+        return false
+      end
+  end
+  return true
+end
