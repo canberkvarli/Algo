@@ -441,3 +441,42 @@ def isPrime(num)
   end
   return true
 end
+
+
+def rot13(secret_messages)
+#    alphabet variable
+#    ["Why", "did", "the", "chicken", "cross", "the", "road"]
+#     iterate over the array
+#     for every word
+#         use helper function on a word
+#         and shovel the helper(word) to the result array
+#     return the result array
+    # result = []
+     secret_messages.map do |msg| 
+         rotate(msg)
+     end
+end
+
+
+def rotate(word)
+#     split the word into chars 
+#     find the pos of the char and add 13 
+#     new_char = alphabet[pos % alphabet.length]
+#       add new_char to the result
+#       new_word.join(',').to_s
+    
+    new_word = ""
+    alphabet = ("a".."z").to_a
+    chars = word.chars
+    chars.each do |char|
+       if alphabet.include?(char)
+        pos = alphabet.index(char)
+        new_pos = pos + 13
+        new_char = alphabet[new_pos % alphabet.length]
+        new_word += new_char
+       else
+          new_word += char 
+       end
+    end
+    new_word
+end
