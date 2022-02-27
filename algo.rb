@@ -480,3 +480,13 @@ def rotate(word)
     end
     new_word
 end
+
+def sum_terms(n)
+# your code here
+    nums = []
+    (1).upto(n) do |i|
+        nums << ((i*i)+1)
+    end
+    nums.reduce(0, :+)
+
+end
