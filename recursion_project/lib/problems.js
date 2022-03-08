@@ -42,15 +42,9 @@ function sumArray(array) {
 
     // base case
     if (array.length === 0) return 0
-    if (array.length === 1) return array[0]
 
     // recursive case
-    let sum = 0
-    for (let i = 0; i < array.length; i++) {
-        const num = sumArray(array[i])
-        sum += num
-    }
-    return sum
+    return array[0] + sumArray(array.slice(1));
 
 }
 
