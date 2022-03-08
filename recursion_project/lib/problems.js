@@ -61,20 +61,11 @@ function sumArray(array) {
 // reverseString("internet")    // => "tenretni"
 // reverseString("friends")     // => "sdneirf"
 function reverseString(str) {
-
+    
     // base case
     if(str.length === 0) return ""
-    if(str.length === 1) return str.split(0,1)[0]
     
-    arr = str.split(0,str.length)
-    
-    // recursive
-
-    let reversed_str = ""
-    for (let i = 0; i < arr.length; i++) {
-        reversed_str += reverseString(str)
-    }
-    return reversed_str
+    return reverseString(str.slice(1)) + str[0];
 
 }
 
@@ -97,15 +88,15 @@ function reverseString(str) {
 // pow(2, -5)   // => 0.03125
 function pow(base, exponent) {
     // base case
-        if(exponent === 0 ) return 1
-        if(exponent === 1) return base
+        if(exponent === 0 ) return 1;
     // 2, 5
     //  2* 2* 2 * 2 *2
+    // if(exponent < 0) return 1 / pow(base, -exponent)
     // recursive case
-    if(exponent > 1) {
-        return base * pow(base, exponent - 1)
-    }else if (exponent < 0){
-        return 1/(base*pow(base,exponent-1))
+    if(exponent > 0){
+        return base * pow(base, exponent - 1);
+    }else{
+        return 1 / pow(base, -exponent);
     }
 
 }
